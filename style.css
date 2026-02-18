@@ -1,0 +1,237 @@
+/* 1. ОБЩИЕ НАСТРОЙКИ */
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent; /* Убирает синюю подсветку на смартфонах */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f4ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+.section {
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* 2. ГЕРОЙ-СЕКЦИЯ (ПЕРВЫЙ СЛАЙД) */
+.hero-lavender {
+    background-color: #E6E6FA;
+    justify-content: center;
+}
+
+.hero-top { text-align: center; margin-bottom: 40px; }
+.welcome-text { letter-spacing: 4px; font-size: 0.8rem; text-transform: uppercase; color: #4b0082; }
+h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); color: #4b0082; margin: 15px 0; }
+.date-top { font-size: 1.3rem; letter-spacing: 3px; font-weight: 300; }
+
+.center-photo {
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: 50% 70%;
+    border-radius: 50%;
+    border: 10px solid white;
+    outline: 1px solid rgba(75, 0, 130, 0.1);
+    box-shadow: 0 15px 35px rgba(75, 0, 130, 0.15), 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.center-photo:hover {
+    transform: scale(1.1);
+}
+
+/* 3. СЕКЦИЯ С ВИДЕО (ВТОРОЙ СЛАЙД) */
+.video-section-alt {
+    background: linear-gradient(180deg, #E6E6FA 0%, #D8BFD8 100%);
+    padding: 80px 20px;
+}
+
+.video-window {
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    padding: 12px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(75, 0, 130, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.styled-video {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+    outline: none !important;
+    border: none !important;
+    background: #000;
+    /* БЛОКИРОВКА СЕРОГО ФИЛЬТРА */
+    filter: none !important;
+    -webkit-filter: grayscale(0) !important;
+    opacity: 1 !important;
+}
+
+/* Принудительно отключаем любые эффекты при наведении */
+.video-window:hover .styled-video,
+.styled-video:hover {
+    filter: none !important;
+    -webkit-filter: grayscale(0) !important;
+    opacity: 1 !important;
+    background: #000 !important;
+}
+
+.video-caption {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.video-caption h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: #4b0082;
+    margin: 0;
+}
+
+/* 4. ПРОГРАММА ДНЯ (ТРЕТИЙ СЛАЙД) */
+.schedule-block {
+    background-color: #B2A4D4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.program-centered {
+    max-width: 800px;
+    width: 100%;
+}
+
+.schedule-block h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: #ffffff;
+    margin-bottom: 60px;
+    font-size: 2rem;
+}
+
+.program-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.program-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.p-time {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 2px;
+}
+
+.p-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: #4b0082;
+    line-height: 1.2;
+}
+
+.program-item:not(:last-child)::after {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    margin-top: 25px;
+}
+
+/* 5. ЛОКАЦИЯ (ЧЕТВЕРТЫЙ СЛАЙД) */
+.location-bg {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('Banquet_Hall.png') center/cover no-repeat fixed;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 60px 40px;
+    border-radius: 30px;
+    text-align: center;
+    color: white;
+    max-width: 500px;
+    width: 100%;
+}
+
+.image-maps {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.map-thumbnail {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.map-thumbnail:hover {
+    transform: scale(4); /* ИСПРАВЛЕНО НА ПЛАВНОЕ УВЕЛИЧЕНИЕ */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.map-btn {
+    display: inline-block;
+    margin: 25px 0 10px 0;
+    padding: 15px 35px;
+    background: white;
+    color: #4b0082;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+/* ДРЕСС-КОД */
+.palette { display: flex; justify-content: center; gap: 15px; margin-top: 25px; }
+.dot { width: 40px; height: 40px; border-radius: 50%; border: 2px solid white; }
+
+.footer { padding: 50px; text-align: center; font-style: italic; color: #888; }
+
+/* 6. МОБИЛЬНАЯ ВЕРСИЯ */
+@media (max-width: 850px) {
+    .section { padding: 60px 20px; }
+    .hero-lavender { min-height: 100vh; }
+    .map-thumbnail:hover { transform: none; } /* Отключаем увеличение на телефонах */
+    .p-text { font-size: 2.2rem; }
+}
