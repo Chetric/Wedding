@@ -1,7 +1,7 @@
 /* 1. ОБЩИЕ НАСТРОЙКИ */
 * {
     box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent; /* Убирает синюю подсветку на смартфонах */
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -63,7 +63,7 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
 }
 
 .video-window {
-    width: 90%;
+    width: 95%;
     max-width: 600px;
     background: white;
     padding: 12px;
@@ -72,7 +72,7 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: background 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .styled-video {
@@ -82,19 +82,17 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
     outline: none !important;
     border: none !important;
     background: #000;
-    /* БЛОКИРОВКА СЕРОГО ФИЛЬТРА */
+    /* ЖЕСТКАЯ БЛОКИРОВКА СЕРОГО ФИЛЬТРА */
     filter: none !important;
     -webkit-filter: grayscale(0) !important;
     opacity: 1 !important;
 }
 
-/* Принудительно отключаем любые эффекты при наведении */
 .video-window:hover .styled-video,
 .styled-video:hover {
     filter: none !important;
     -webkit-filter: grayscale(0) !important;
     opacity: 1 !important;
-    background: #000 !important;
 }
 
 .video-caption {
@@ -207,7 +205,7 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
 }
 
 .map-thumbnail:hover {
-    transform: scale(4); /* ИСПРАВЛЕНО НА ПЛАВНОЕ УВЕЛИЧЕНИЕ */
+    transform: scale(4); 
     box-shadow: 0 15px 30px rgba(0,0,0,0.4);
 }
 
@@ -231,7 +229,17 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
 /* 6. МОБИЛЬНАЯ ВЕРСИЯ */
 @media (max-width: 850px) {
     .section { padding: 60px 20px; }
-    .hero-lavender { min-height: 100vh; }
-    .map-thumbnail:hover { transform: none; } /* Отключаем увеличение на телефонах */
+    
+    .location-bg {
+        background-attachment: scroll !important; /* Фикс фона для телефонов */
+        background-position: center center !important;
+    }
+
+    .glass-card {
+        padding: 40px 20px;
+        width: 95%;
+    }
+
+    .map-thumbnail:hover { transform: none; }
     .p-text { font-size: 2.2rem; }
 }
