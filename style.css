@@ -82,7 +82,6 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
     outline: none !important;
     border: none !important;
     background: #000;
-    /* ЖЕСТКАЯ БЛОКИРОВКА СЕРОГО ФИЛЬТРА */
     filter: none !important;
     -webkit-filter: grayscale(0) !important;
     opacity: 1 !important;
@@ -231,7 +230,10 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
     .section { padding: 60px 20px; }
     
     .location-bg {
-        background-attachment: scroll !important; /* Фикс фона для телефонов */
+        /* Меняем картинку на мобильную */
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                          url('Banquet_Hall_1.png');
+        background-attachment: scroll !important; 
         background-position: center center !important;
         background-size: cover !important;
     }
@@ -239,8 +241,12 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
     .glass-card {
         padding: 30px 20px;
         margin: 20px 0;
+        width: 95%;
     }
 
-    .map-thumbnail:hover { transform: none; }
+    .map-thumbnail:hover { 
+        transform: none !important; /* На телефонах scale(4) будет мешать скроллу */
+    }
+    
     .p-text { font-size: 2.2rem; }
 }
