@@ -145,7 +145,7 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
 @media (max-width: 850px) {
     .section { padding: 60px 15px; }
     .schedule-block, .location-bg { background-attachment: scroll !important; }
-    .location-bg { background-image: url('Banquet_Hall_mobile.png') !important; }
+    .location-bg { background-image: url('Banquet_Hall_1.png') !important; }
     .silver-line { width: 85%; }
     .p-text { font-size: 2.5rem; }
     .details-item h2 { font-size: 3rem; }
