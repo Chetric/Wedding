@@ -185,6 +185,25 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
     width: 100%;
 }
 
+.venue-info {
+    margin-bottom: 20px;
+}
+
+.venue-name {
+    font-size: 1.8rem;
+    font-family: 'Great Vibes', cursive; /* Сделаем название красивым шрифтом */
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.venue-address, .venue-city {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
 .image-maps {
     margin-top: 25px;
     width: 100%;
