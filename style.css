@@ -227,25 +227,36 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
 
 /* 6. МОБИЛЬНАЯ ВЕРСИЯ */
 @media (max-width: 850px) {
-    .section { padding: 60px 20px; }
+    .section { 
+        padding: 60px 20px; 
+        min-height: auto; /* Помогает избежать прыжков высоты на мобильных */
+    }
     
     .location-bg {
         /* Меняем картинку на мобильную */
         background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                          url('Banquet_Hall_1.png');
-        background-attachment: scroll !important; 
+                          url('Banquet_Hall_1.png') !important;
+        
+        background-attachment: scroll !important; /* Картинка просто едет с текстом */
         background-position: center center !important;
         background-size: cover !important;
+        
+        /* Убираем любые попытки браузера оптимизировать фон на ходу */
+        will-change: auto !important; 
+        transform: none !important;
     }
 
     .glass-card {
         padding: 30px 20px;
         margin: 20px 0;
-        width: 95%;
+        width: 100%; /* На весь экран, чтобы палец чаще попадал на карточку, а не на фон */
+        max-width: none;
     }
 
-    .map-thumbnail:hover { 
-        transform: none !important; /* На телефонах scale(4) будет мешать скроллу */
+    /* Полностью отключаем увеличение карты на мобилках */
+    .map-thumbnail:hover, .map-thumbnail:active { 
+        transform: none !important; 
+        scale: 1 !important;
     }
     
     .p-text { font-size: 2.2rem; }
