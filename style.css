@@ -157,9 +157,61 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
 }
 .map-thumbnail:hover { transform: scale(3.5); z-index: 100; }
 
-.footer { padding: 60px 20px; text-align: center; color: #888; font-style: italic; }
+/* ТАЙМЕР */
+.timer-section {
+    background-color: #cfaec9; /* Светлый фон, как у body */
+    text-align: center;
+    padding: 80px 20px;
+    min-height: auto; /* Для таймера не нужна целая высота экрана */
+}
 
-/* 7. МОБИЛЬНАЯ ВЕРСИЯ */
+.timer-display {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap; /* Чтобы на мобилках цифры переносились */
+}
+
+.timer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.timer-item span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #4b0082;
+    line-height: 1;
+}
+
+.timer-item p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    color: #8e8e8e;
+}
+
+.footer {
+    background-color: #cfaec9; /* Твой цвет фона */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.footer p {
+    font-family: 'Great Vibes', cursive !important; /* Красивый шрифт */
+    font-size: 3rem;       /* Увеличенный размер */
+    color: #4b0082;        /* Фиолетовый цвет */
+    margin: 0;
+    line-height: 1.2;
+    font-style: normal;    /* Убираем обычный курсив, так как шрифт и так рукописный */
+}
+
 /* 7. МОБИЛЬНАЯ ВЕРСИЯ */
 @media (max-width: 850px) {
     .section { 
@@ -199,4 +251,11 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
     .p-text { font-size: 2.2rem; }
     .map-thumbnail:active { transform: scale(1.3); z-index: 100; position: relative; }
     .hero-lavender { min-height: 100vh; min-height: -webkit-fill-available; }
+
+    .timer-display { gap: 15px; }
+    .timer-item span { font-size: 2rem; }
+    .timer-item p { font-size: 0.7rem; }
+
+    .footer p { font-size: 2.2rem; }
+    .timer-item span { font-size: 2rem; }
 }

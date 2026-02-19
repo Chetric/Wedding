@@ -120,9 +120,58 @@
         </div>
     </section>
 
+    <section class="section timer-section">
+    <h2>До праздника осталось:</h2>
+    <div id="countdown" class="timer-display">
+        <div class="timer-item">
+            <span id="days">00</span>
+            <p>дней</p>
+        </div>
+        <div class="timer-item">
+            <span id="hours">00</span>
+            <p>часов</p>
+        </div>
+        <div class="timer-item">
+            <span id="minutes">00</span>
+            <p>минут</p>
+        </div>
+        <div class="timer-item">
+            <span id="seconds">00</span>
+            <p>секунд</p>
+        </div>
+    </div>
+    </section>
+
     <footer class="footer">
-        <p>До встречи на нашем празднике!</p>
+        <p>До встречи!</p>
     </footer>
 
+<script>
+    // Установи дату свадьбы: 26 июля 2026 года, 17:00
+    const weddingDate = new Date("July 26, 2026 17:00:00").getTime();
+
+    const timer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        // Расчет дней, часов, минут и секунд
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Вывод результата в элементы с соответствующими ID
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+        // Если дата наступила
+        if (distance < 0) {
+            clearInterval(timer);
+            document.getElementById("countdown").innerHTML = "<h3>Этот счастливый день настал!</h3>";
+        }
+    }, 1000);
+</script>
 </body>
 </html>
