@@ -31,7 +31,7 @@ body {
 /* === СЕРЕБРЯНЫЙ РАЗДЕЛИТЕЛЬ === */
 .divider-wrapper {
     background-color: #f8f4ff;
-    padding: 20px 0;
+    padding: 10px 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -159,7 +159,7 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
 
 /* ТАЙМЕР */
 .timer-section {
-    background-color: #cfaec9; /* Светлый фон, как у body */
+    background-color: #b990b2; /* Светлый фон, как у body */
     text-align: center;
     padding: 80px 20px;
     min-height: auto; /* Для таймера не нужна целая высота экрана */
@@ -198,7 +198,7 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
 }
 
 .footer {
-    background-color: #cfaec9; /* Твой цвет фона */
+    background-color: #a17699; /* Твой цвет фона */
     padding: 80px 20px;
     text-align: center;
 }
@@ -231,7 +231,7 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
     /* 4 СЛАЙД (Детали): УБИРАЕМ ФОН, СТАВИМ ЦВЕТ #cfaec9 */
     .details-section {
         background-image: none !important; /* Удаляем картинку */
-        background-color: #cfaec9 !important; /* Ставим твой цвет */
+        background-color: #c79dbf !important; /* Ставим твой цвет */
         background-attachment: scroll !important;
         padding: 60px 15px;
     }
