@@ -71,14 +71,65 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
     box-shadow: 0 15px 35px rgba(75, 0, 130, 0.15);
 }
 
-/* 3. ВИДЕО */
-.video-section-alt { background: linear-gradient(180deg, #E6E6FA 0%, #D8BFD8 100%); }
-.video-window {
-    width: 95%; max-width: 600px; background: white; padding: 12px;
-    border-radius: 25px; box-shadow: 0 20px 50px rgba(75, 0, 130, 0.1);
+/* ФОН ВТОРОГО СЛАЙДА (ГРАДИЕНТ) */
+.video-section-alt {
+    background: linear-gradient(180deg, #E6E6FA 0%, #D8BFD8 100%) !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-.styled-video { width: 100%; border-radius: 20px; background: #000; }
-.video-caption h3 { font-family: 'Great Vibes', cursive; font-size: 2.2rem; margin-top: 20px; text-align: center; }
+
+/* 3. ВИДЕО — ИСПРАВЛЕННАЯ ЗЕРКАЛЬНАЯ РАМКА */
+.video-window {
+    width: 95%; 
+    max-width: 600px; 
+    background: linear-gradient(
+        135deg, 
+        #d8bfd8 0%, 
+        #f3e5f5 25%, 
+        #ffffff 50%, 
+        #f3e5f5 75%, 
+        #d8bfd8 100%
+    );
+    padding: 15px;
+    border-radius: 30px; 
+    box-shadow: 
+        0 20px 50px rgba(75, 0, 130, 0.15),
+        inset 0 0 15px rgba(255, 255, 255, 0.6); 
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    
+    display: block; 
+    overflow: hidden;
+    line-height: 0; 
+    position: relative;
+}
+
+/* САМО ВИДЕО */
+.styled-video { 
+    width: 100% !important; 
+    max-width: 100%; 
+    height: auto; 
+    display: block;
+    border-radius: 20px; 
+    box-shadow: 0 0 15px rgba(0,0,0,0.1); /* Легкая тень, чтобы видео "утопало" в рамке */
+}
+
+/* ПОДПИСЬ ПОД ВИДЕО (ВНУТРИ РАМКИ) */
+.video-caption {
+    width: 100%;
+    text-align: center;
+}
+
+.video-caption h3 {
+    font-family: 'Great Vibes', cursive !important; /* Тот самый красивый шрифт */
+    font-size: clamp(2.2rem, 5vw, 2.8rem);          /* Размер как в программе */
+    color: #4b0082;                               /* Наш фиолетовый */
+    margin: 15px 0 5px 0;                         /* Отступ сверху от видео */
+    line-height: 1.2;                             /* Возвращаем высоту строки для текста */
+    font-weight: normal;
+}
 
 /* 4. ПРОГРАММА И ДЕТАЛИ (СКЛЕЙКА ФОНА) */
 .schedule-block, 
