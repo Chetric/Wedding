@@ -167,21 +167,26 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
         min-height: auto; 
     }
     
-    /* === НОВЫЙ ВЕРТИКАЛЬНЫЙ ФОН ДЛЯ 3 И 4 СЛАЙДА === */
-    .schedule-block, 
-    .details-section { 
-        /* Указываем здесь твой новый вытянутый фон */
+/* 3 СЛАЙД (Программа): оставляем вытянутый фон */
+    .schedule-block { 
         background-image: url('Background_Slide_3_Mobile.png') !important;
-        
         background-attachment: scroll !important; 
-        background-position: center center !important;
-        background-size: cover !important; /* Теперь cover будет работать идеально */
+        background-position: top center !important;
+        background-size: cover !important;
         padding: 80px 15px;
+    }
+
+    /* 4 СЛАЙД (Детали): УБИРАЕМ ФОН, СТАВИМ ЦВЕТ #cfaec9 */
+    .details-section {
+        background-image: none !important; /* Удаляем картинку */
+        background-color: #cfaec9 !important; /* Ставим твой цвет */
+        background-attachment: scroll !important;
+        padding: 60px 15px;
     }
     
     /* Фон для локации (оставляем как был или тоже меняем на вытянутый) */
     .location-bg { 
-        background-image: url('Banquet_Hall_mobile.png') !important; 
+        background-image: url('Banquet_Hall_1.png') !important; 
         background-attachment: scroll !important;
         background-position: center center !important;
         background-size: cover !important;
