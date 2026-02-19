@@ -181,7 +181,7 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
 }
 
 .timer-item span {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Great Vibes', cursive !important; 
     font-size: 3rem;
     font-weight: 800;
     color: #4b0082;
@@ -194,7 +194,7 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-top: 10px;
-    color: #8e8e8e;
+    color: #4b0082;
 }
 
 .footer {
