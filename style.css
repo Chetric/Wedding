@@ -278,7 +278,7 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
         min-height: auto; 
     }
     
-/* 3 СЛАЙД (Программа): оставляем вытянутый фон */
+    /* 3 СЛАЙД (Программа): используем вертикальный фон */
     .schedule-block { 
         background-image: url('Background_Slide_3_Mobile.png') !important;
         background-attachment: scroll !important; 
@@ -287,15 +287,15 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
         padding: 80px 15px;
     }
 
-    /* 4 СЛАЙД (Детали): УБИРАЕМ ФОН, СТАВИМ ЦВЕТ #cfaec9 */
+    /* 4 СЛАЙД (Детали): УБИРАЕМ ФОН, СТАВИМ ЦВЕТ */
     .details-section {
-        background-image: none !important; /* Удаляем картинку */
-        background-color: #c79dbf !important; /* Ставим твой цвет */
+        background-image: none !important; 
+        background-color: #c79dbf !important; 
         background-attachment: scroll !important;
         padding: 60px 15px;
     }
     
-    /* Фон для локации (оставляем как был или тоже меняем на вытянутый) */
+    /* Фон для локации */
     .location-bg { 
         background-image: url('Banquet_Hall_1.png') !important; 
         background-attachment: scroll !important;
@@ -304,16 +304,37 @@ h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 10vw, 6rem); 
         min-height: 100vh; 
     }
 
-    /* Остальные фиксы: карта, линии, шрифты */
-    .glass-card { padding: 40px 20px; width: 95%; background: rgba(255, 255, 255, 0.4); }
+    /* ФИКС КАРТЫ: убираем ЛЮБОЕ увеличение при нажатии и наведении */
+    .map-thumbnail:hover,
+    .map-thumbnail:active { 
+        transform: none !important; 
+        z-index: 1 !important; 
+        position: static !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+        cursor: default !important;
+    }
+
+    /* Интерфейсные элементы */
+    .glass-card { 
+        padding: 40px 20px; 
+        width: 95%; 
+        background: rgba(255, 255, 255, 0.4); 
+    }
+    
     .silver-line { width: 85%; }
     .p-text { font-size: 2.2rem; }
-    .hero-lavender { min-height: 100vh; min-height: -webkit-fill-available; }
+    
+    /* Фикс высоты первого слайда для мобильных браузеров */
+    .hero-lavender { 
+        min-height: 100vh; 
+        min-height: -webkit-fill-available; 
+    }
 
+    /* Таймер */
     .timer-display { gap: 15px; }
     .timer-item span { font-size: 2rem; }
     .timer-item p { font-size: 0.7rem; }
 
+    /* Футер */
     .footer p { font-size: 2.2rem; }
-    .timer-item span { font-size: 2rem; }
 }
